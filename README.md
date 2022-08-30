@@ -1,7 +1,6 @@
 # Fit Life
 ## Description :
 This application will help you improve your health. It allows you to register with sports classes such as yoga and cardio with many qualified trainers.
-
 ## Live Page :
 - [LIVE LINK](https://fitlifegym.herokuapp.com/)
 - [FIGMA](https://www.figma.com/file/NRoX0bLdQBkP1kAwQl2OYe/Fitlife-Gym?node-id=0%3A1)
@@ -34,7 +33,7 @@ when I finish subscribing to classes I can log out.
 
 ---
 ## sql ER Diagram :
-![ ER Diagram ]()
+![ ER Diagram ](./public/assets/images/ERDigram.jpeg)
 ## Technologies ⚙:
 - HTML5
 - CSS3

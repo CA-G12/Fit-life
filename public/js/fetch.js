@@ -9,15 +9,13 @@ const fetchData=(method, endpoint, data)=>{
   })
 }
 
-
-
 const sginUp=(name,email,password,confirm)=>{
 
-  const userInfo={
-    name:name.value,
-    email:email.value,
-    password:password.value,
-    confirm:confirm.value
+  const userInfo = {
+    name: name.value,
+    email: email.value,
+    password: password.value,
+    confirm: confirm.value
   }
 
   fetchData('POST', '/sign-up-form', userInfo)

@@ -1,4 +1,15 @@
-const sginUp = (name, email, password, confirm) => {
+const fetchData=(method, endpoint, data)=>{
+  return fetch(endpoint, {
+    method: method,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+
+  })
+}
+
+const sginUp=(name,email,password,confirm)=>{
 
   const userInfo = {
     name: name.value,
@@ -6,17 +17,18 @@ const sginUp = (name, email, password, confirm) => {
     password: password.value,
     confirm: confirm.value
   }
-  fetch('/sign-up-form', {
-    method: 'POST', // or 'PUT'
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(userInfo),
 
-  }).then(res => res.json())
-    .then(console.log)
-    .catch(console.log)
+  fetchData('POST', '/sign-up-form', userInfo)
+}
 
 
-  console.log(userInfo);
+const signin = (email , password)=>{
+
+  const credentials={
+    email :email,
+    password:password
+  }
+
+  fetchData('POST','/Sign-in-form', credentials)
+
 }

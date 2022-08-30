@@ -1,10 +1,10 @@
-const sginUp=(name,email,password,confirm)=>{
+const sginUp = (name, email, password, confirm) => {
 
-  const userInfo={
-    name:name.value,
-    email:email.value,
-    password:password.value,
-    confirm:confirm.value
+  const userInfo = {
+    name: name.value,
+    email: email.value,
+    password: password.value,
+    confirm: confirm.value
   }
   fetch('/sign-up-form', {
     method: 'POST', // or 'PUT'
@@ -13,7 +13,10 @@ const sginUp=(name,email,password,confirm)=>{
     },
     body: JSON.stringify(userInfo),
 
-  })
+  }).then(res => res.json())
+    .then(console.log)
+    .catch(console.log)
+
 
   console.log(userInfo);
 }

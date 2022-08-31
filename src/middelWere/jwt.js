@@ -6,7 +6,8 @@ const jtwFun=(info,res)=>{
       console.log(err);
     }
     res.cookie('token',data)     
-    res.json({nn:"bbbb"})  
+    res.send({nn:"bbbb"})  
+    
     })
 }
 module.exports=jtwFun

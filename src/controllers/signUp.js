@@ -12,7 +12,9 @@ const signUp = (req, res) => {
     if(re.rows[0]){res.json({mas:'email is exist'})}
     else{
       bcrypt.hash(password,12).then(hashPassword=>player.storeUser(name,email,hashPassword)
-      .then(id=>jtwFun(id.rows[0],res))).then(re=>res.json({b:'bbbbbbb'}))
+      .then(id=>{
+        jtwFun(id.rows[0],res)
+      }))
     }
   }))
   //   .then(/* Checking, Hashing */)

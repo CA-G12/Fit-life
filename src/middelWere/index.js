@@ -1,5 +1,5 @@
-const {jtwFun, auth}=require('./jwt')
+const {jwtFun, auth}=require('./jwt')
 
 module.exports={
-  jtwFun ,auth
+  jwtFun ,auth
 }

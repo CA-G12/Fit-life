@@ -1,7 +1,7 @@
 const jwt=require('jsonwebtoken')
 require('dotenv').config();
 
-const jtwFun=(info,res)=>{
+const jwtFun=(info,res)=>{
   jwt.sign(info,process.env.SECRET_KEY,(err,data)=>{
     if(err){
       console.log(err);
@@ -11,15 +11,16 @@ const jtwFun=(info,res)=>{
     
     })
 }
-const auth = (req, res)=>{
-  const {token} = req.cookie 
+const auth = (req, res, next)=>{
+  const {token} = req.cookies
   jwt.verify(token ,process.env.SECRET_KEY, (err,data)=>{
-    if (err){
-      res.json(err)
-    }else{
-      res.status(302).redirect('/')
+    if (!err){
+      req.user=data
     }
+    next();
   })
 }
 
-module.exports={ jtwFun, auth }
+
+
+module.exports={jwtFun, auth }

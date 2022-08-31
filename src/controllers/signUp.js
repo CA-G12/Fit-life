@@ -1,6 +1,6 @@
 const { validateRegister } = require('../config/validate')
 const bcrypt = require("bcryptjs");
-const {jtwFun}=require('../middelWere')
+const {jwtFun}=require('../middelWere')
 const {PlayerQueries}=require('../database/queries')
 const player = new PlayerQueries();
 
@@ -13,7 +13,7 @@ const signUp = (req, res) => {
     else{
       bcrypt.hash(password,12).then(hashPassword=>player.storeUser(name,email,hashPassword)
       .then(id=>{
-        jtwFun(id.rows[0],res)
+        jwtFun(id.rows[0],res)
       }))
     }
   }))

@@ -2,8 +2,8 @@ const UserQueries = require("../database/queries/UserQueries")
 const {signUpPage,signInPage}=require('./pages')
 const signUp=require('./signUp')
 const signIn=require('./signIn')
-UserQueries.getUserById
+const homePage=require('./pages/Home')
 
 module.exports={
-  signUpPage,signUp,signInPage,signIn
+  signUpPage,signUp,signInPage,signIn,homePage
 }

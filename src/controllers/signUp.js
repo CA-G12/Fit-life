@@ -1,10 +1,10 @@
 const { validateRegister } = require('../config/validate')
-const bcrypt = require("bcryptjs");
-const {jtwFun}=require('../middelWere')
+const bcrypt = require('bcryptjs');
+const {jtwFun, auth}=require('../middelWere')
 
 const jwt=require('jsonwebtoken')
 require('dotenv').config();
-const PlayerQueries=require('../database/queries')
+const {PlayerQueries}=require('../database/queries')
 const player = new PlayerQueries();
 const signUp = (req, res) => {
   const {name,email,password}=req.body

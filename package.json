@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=PROD node ./src/index.js",
     "dev": "cross-env NODE_ENV=DEV nodemon ./src/index.js",
-    "test": "DATABASE_URL=postgres://user:123456@localhost:5432/testing cross-env NODE_ENV=TEST jest"
+    "test": "cross-env NODE_ENV=TEST jest ./test/database.test.js"
   },
   "keywords": [],
   "author": "",

@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const {jtwFun}=require('../middelWere')
 const {PlayerQueries}=require('../database/queries')
 const player = new PlayerQueries();
+
 const signUp = (req, res) => {
   const {name,email,password}=req.body
   validateRegister(req.body)

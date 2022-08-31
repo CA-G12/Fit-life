@@ -27,9 +27,21 @@ const retVal = (message) => {
         else response(message);
     })
 
-
 }
 
+const validateSignIn = (user) => {
+    const schema = Joi.object({
+        email: Joi.string().required(),
+        password: Joi.string().required().min(6).max(16),
+    });
+
+    return schema.validateAsync(user, {
+        abortEarly: false
+    })
+        .then(retVal)
+        .catch(retVal)
+}
 module.exports = {
-    validateRegister
+    validateRegister,
+    validateSignIn
 }

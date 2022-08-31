@@ -2,9 +2,11 @@ const jwt=require('jsonwebtoken')
 require('dotenv').config();
 const jtwFun=(info,res)=>{
   jwt.sign(info,process.env.SECRET_KEY,(err,data)=>{
-    console.log(data);
+    if(err){
+      console.log(err);
+    }
     res.cookie('token',data)     
-    res.send()  
+    res.json({nn:"bbbb"})  
     })
 }
 module.exports=jtwFun

@@ -32,6 +32,8 @@ const signin = (email , password)=>{
     password:password
   }
 
-  fetchData('POST','/Sign-in-form', credentials)
+  fetchData('POST','/Sign-in-form', credentials).then(res=> res.json()).then(res=>{
+    res.msg?console.log(res):window.location.href='/'
+  })
 
 }

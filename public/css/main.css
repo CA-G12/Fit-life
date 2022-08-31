@@ -357,6 +357,7 @@ body {
 .header .btn {
     display: block;
 }
+
 .header {
     background-color: var(--white);
     position: fixed;
@@ -555,6 +556,7 @@ body {
     flex-wrap: wrap;
     width: 100%;
 }
+
 .class-card {
     background-color: var(--white);
     border-radius: var(--radius-10);
@@ -697,6 +699,10 @@ body {
     padding-block: 18px;
     padding-inline: 30px 80px;
     border-radius: var(--radius-10);
+}
+
+.footer-form .input-field::placeholder {
+    color: var(--rich-black-fogra-29-1);
 }
 
 .footer-form .btn {
@@ -1088,4 +1094,159 @@ body {
         grid-template-columns: 1fr 0.6fr 0.9fr 1fr;
     }
 
+}
+
+/* start login page */
+
+.forms-style {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms-style .wrapper {
+    width: 380px;
+    padding: 30px;
+    flex-direction: column;
+    background: var(--coquelicot);
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.wrapper header {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--white);
+
+}
+
+form .field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form .field.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        margin-left: 0px;
+    }
+
+    20%,
+    80% {
+        margin-left: -12px;
+    }
+
+    40%,
+    60% {
+        margin-left: 12px;
+    }
+}
+
+form .field .input-area {
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 45px;
+    font-size: 18px;
+    background: none;
+    caret-color: var(--rich-black-fogra-29-1);
+    border-radius: 5px;
+    border: 1px solid var(--white);
+    border-bottom-width: 2px;
+    transition: all 0.2s ease;
+}
+
+form .field input:focus,
+form .field.valid input {
+    border-color: var(--rich-black-fogra-29-1);
+}
+
+.field .input-area i {
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.input-area .icon {
+    left: 15px;
+    color: var(--white);
+    transition: color 0.2s ease;
+}
+
+form input:focus~.icon,
+form .field.valid .icon {
+    color: var(--rich-black-fogra-29-1);
+}
+
+form input::placeholder {
+    color: var(--white);
+    font-size: 17px;
+}
+
+form .field .error {
+    display: none;
+}
+
+.wrapper a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.wrapper a:hover {
+    text-decoration: underline;
+    color: var(--rich-black-fogra-29-1);
+}
+
+.Btn {
+    height: 50px;
+    margin-top: 30px;
+    color: var(--rich-black-fogra-29-1);
+    padding: 5px;
+    border: none;
+    background: var(--white);
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 100%;
+    background-color: var(--rich-black-fogra-29-1);
+    color: var(--light-gray);
+    margin-bottom: 5px;
+    border-radius: 0 !important;
+}
+
+.Btn:hover {
+    color: var(--white);
+    background: var(--rich-black-fogra-29-1);
+}
+
+.sign-txt {
+    display: flex;
+    color: var(--white);
+}
+
+.sign-txt a {
+    color: var(--rich-black-fogra-29-1);
+}
+
+.form input {
+    margin: 20px 0;
+    padding: 5px;
+    border: 1px solid var(--rich-black-fogra-29_50);
 }

@@ -20,7 +20,7 @@ const sginUp=(name,email,password,confirm)=>{
 
   fetchData('POST', '/sign-up-form', userInfo).then(res=>{
     console.log(res);
-    window.location.href='/'
+    window.location.href='/home'
   })
 }
 
@@ -33,7 +33,7 @@ const signin = (email , password)=>{
   }
 
   fetchData('POST','/Sign-in-form', credentials).then(res=> res.json()).then(res=>{
-    res.msg?console.log(res):window.location.href='/'
+    res.msg?console.log(res):window.location.href='/home'
   })
 
 }

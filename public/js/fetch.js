@@ -18,7 +18,10 @@ const sginUp=(name,email,password,confirm)=>{
     confirm: confirm.value
   }
 
-  fetchData('POST', '/sign-up-form', userInfo)
+  fetchData('POST', '/sign-up-form', userInfo).then(res=>{
+    console.log(res);
+    window.location.href='/'
+  })
 }
 
 

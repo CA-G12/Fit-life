@@ -1,7 +1,7 @@
 {
   "name": "gym-team9",
   "version": "1.0.0",
-  "description": "",
+  "description": "This application will help you improve your health. It allows you to register with sports classes such as yoga and cardio with many qualified trainers.\r ## Live Page :\r - [LIVE LINK](https://fitlifegym.herokuapp.com/)\r - [FIGMA](https://www.figma.com/file/NRoX0bLdQBkP1kAwQl2OYe/Fitlife-Gym?node-id=0%3A1)\r - [ER Diagram](https://drawsql.app/teams/mohjaps/diagrams/fitgym)\r ---",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=PROD node ./src/index.js",
@@ -27,5 +27,16 @@
     "jest": "^28.1.3",
     "nodemon": "^2.0.19",
     "supertest": "^6.2.4"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CA-G12/Fit-life.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CA-G12/Fit-life/issues"
+  },
+  "homepage": "https://github.com/CA-G12/Fit-life#readme"
 }

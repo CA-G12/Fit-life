@@ -1,19 +1,39 @@
-const sginUp=(name,email,password,confirm)=>{
-
-  const userInfo={
-    name:name.value,
-    email:email.value,
-    password:password.value,
-    confirm:confirm.value
-  }
-  fetch('/sign-up-form', {
-    method: 'POST', // or 'PUT'
+const fetchData=(method, endpoint, data)=>{
+  return fetch(endpoint, {
+    method: method,
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(userInfo),
+    body: JSON.stringify(data),
 
   })
+}
 
-  console.log(userInfo);
+const sginUp=(name,email,password,confirm)=>{
+
+  const userInfo = {
+    name: name.value,
+    email: email.value,
+    password: password.value,
+    confirm: confirm.value
+  }
+
+  fetchData('POST', '/sign-up-form', userInfo).then(res=>{
+    console.log(res);
+    window.location.href='/'
+  })
+}
+
+
+const signin = (email , password)=>{
+
+  const credentials={
+    email :email,
+    password:password
+  }
+
+  fetchData('POST','/Sign-in-form', credentials).then(res=> res.json()).then(res=>{
+    res.msg?console.log(res):window.location.href='/'
+  })
+
 }

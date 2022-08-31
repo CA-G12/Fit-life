@@ -1,3 +1,4 @@
+const msg=document.querySelector('.msg')
 const fetchData=(method, endpoint, data)=>{
   return fetch(endpoint, {
     method: method,
@@ -18,9 +19,14 @@ const sginUp=(name,email,password,confirm)=>{
     confirm: confirm.value
   }
 
-  fetchData('POST', '/sign-up-form', userInfo).then(res=>{
+  fetchData('POST', '/sign-up-form', userInfo).then(res=>res.json()).then(res=>{
     console.log(res);
-    window.location.href='/home'
+    if(res.msg){
+      msg.textContent=res.msg
+    }else{
+      window.location.href='/home'
+
+    }
   })
 }
 
@@ -33,7 +39,9 @@ const signin = (email , password)=>{
   }
 
   fetchData('POST','/Sign-in-form', credentials).then(res=> res.json()).then(res=>{
-    res.msg?console.log(res):window.location.href='/home'
+    if(res.msg){  
+          msg.textContent=res.msg
+    }else{window.location.href='/home'}
   })
 
 }

@@ -23,19 +23,14 @@ app.get('/', (req, res) => {
 
 })
 
-// app.use((req,res, next)=>{
-//     if (req.user) app.use(express.static(path.join(__dirname, '..', 'public','pages','home.html')))
-//     else{
-//         app.use(express.static(path.join(__dirname, '..', 'public')))
-//     }
-//     next()
-// })
-
 app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(router);
 
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'pages', 'errors', '404.html' ))
+})
+app.use((err, req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'pages', 'errors', '500.html' ))
 })
 
 module.exports = app

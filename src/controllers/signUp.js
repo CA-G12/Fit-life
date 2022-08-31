@@ -9,7 +9,7 @@ const signUp = (req, res) => {
   validateRegister(req.body)
   .then(data=>player.getUserById(data.email)
   .then(re=>{
-    if(re.rows[0]){res.json({mas:'email is exist'})}
+    if(re.rows[0]){res.json({msg:'email is exist'})}
     else{
       bcrypt.hash(password,12).then(hashPassword=>player.storeUser(name,email,hashPassword)
       .then(id=>{
@@ -18,7 +18,7 @@ const signUp = (req, res) => {
     }
   }))
   //   .then(/* Checking, Hashing */)
-    .catch(err => console.log(err));
+    .catch(err => res.json(err[0]));
 }
 
 module.exports = signUp

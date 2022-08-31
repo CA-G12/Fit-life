@@ -18,7 +18,7 @@ const signIn = (req,res) => {
             res.json({msg:'password is false'})
         }
     })
-))
+)).catch(err=>res.json(err[0]))
 };
 
 module.exports = signIn;

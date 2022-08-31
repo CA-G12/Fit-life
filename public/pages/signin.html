@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-in</title>
+  <link rel="stylesheet" href="../css/main.css" />
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="../css/main.css">
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
 </head>
-<body>
-    <form>
-        <label> Email :<input  type='email' id='email'  placeholder='Email'></label>
-        <label> Password :<input  type='password' id='password' placeholder='Password'></label>
-        <input type='submit' id="signinBtn" value='Sign In'>
+
+<body class="forms-style footer-top bg-dark has-bg-image" style="background-image: url('../assets/images/footer-bg.png')">
+    <div class="wrapper">
+<header>Sign in</header>
+    <form class="form">
+        <p class="msg"></p>
+
+  <input placeholder="Email" type='email' id='email'  placeholder='Email'>
+        <input  type='password'  placeholder="Password" id='password' placeholder='Password'>
+        <button  id="signinBtn" class="Btn">Sign In</button>
     </form>
+    <div class="sign-txt">Not yet member? <a href="/Sign-up"> Sign Up now</a></div>
+
+    </div>
     <script src="../js/fetch.js"></script>
     <script src="../js/sigin.js"></script>
 </body>

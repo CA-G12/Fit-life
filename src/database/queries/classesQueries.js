@@ -5,6 +5,7 @@ const connection =require('../config/connection')
         let query ;
       }
         showAllClasses(){
+
             return connection.query('SELECT name, description, price, image FROM classes ');
         }
 

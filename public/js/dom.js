@@ -1,11 +1,10 @@
 const cards=document.getElementsByClassName('cards')[0]
 const username=document.getElementById('username')
-fetchData('GET','/username').then(res=>res.json()).then(res=>username.textContent = res.name)
+fetchData('GET','/username',undefined).then(res=>res.json()).then(res=>username.textContent = res.name)
 getClasses()
 
 
 function createCard(data){
-
  data.map(ele=>{
     const classCard = document.createElement('div')
     classCard.setAttribute('class', 'class-card')
@@ -86,7 +85,7 @@ function createCard(data){
 })}
 
 function getClasses(){
-    fetchData('GET','/classes').then(res=>res.json()).then(data=>createCard(data))
+    fetchData('GET','/classes',undefined).then(res=>res.json()).then(data=>createCard(data))
 }
 
 

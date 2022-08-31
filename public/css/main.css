@@ -1247,3 +1247,9 @@ form .field .error {
     padding: 5px;
     border: 1px solid var(--rich-black-fogra-29_50);
 }
+
+.msg {
+    font-weight: 800;
+    color: var(--rich-black-fogra-29_50);
+    font-size: 20px;
+}

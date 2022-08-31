@@ -41,7 +41,21 @@ const validateSignIn = (user) => {
         .then(retVal)
         .catch(retVal)
 }
+
+const newSubValidate = (user) => {
+    const schema = Joi.object({
+        class_id: Joi.number().required(),
+        duration: Joi.number().required(),
+    });
+
+    return schema.validateAsync(user, {
+        abortEarly: false
+    })
+        .then(retVal)
+        .catch(retVal)
+}
 module.exports = {
     validateRegister,
-    validateSignIn
+    validateSignIn,
+    newSubValidate
 }

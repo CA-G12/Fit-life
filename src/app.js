@@ -23,19 +23,7 @@ app.get('/', (req, res) => {
 
 })
 
-// app.use((req,res, next)=>{
-//     if (req.user) app.use(express.static(path.join(__dirname, '..', 'public','pages','home.html')))
-//     else{
-//         app.use(express.static(path.join(__dirname, '..', 'public')))
-//     }
-//     next()
-// })
-
 app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(router);
-
-
-// not found
-// server error
 
 module.exports = app

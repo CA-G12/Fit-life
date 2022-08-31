@@ -32,9 +32,9 @@ CREATE TABLE subscriptions (
     player_id INT NOT NULL,
     CONSTRAINT fk_player_id FOREIGN KEY (player_id) REFERENCES players(id),
     CONSTRAINT fk_class_id FOREIGN KEY (class_id) REFERENCES classes(id),
-    creation_time DATE NOT NULL,
-    duration INT NOT NULL,
-    status INT NOT NULL
+    creation_time DATE NOT NULL GETDATE(),
+    duration INT NOT NULL DEFAULT,
+    status INT NOT NULL DEFAULT 0
 );
 
 

@@ -4,9 +4,9 @@
   "description": "This application will help you improve your health. It allows you to register with sports classes such as yoga and cardio with many qualified trainers.\r ## Live Page :\r - [LIVE LINK](https://fitlifegym.herokuapp.com/)\r - [FIGMA](https://www.figma.com/file/NRoX0bLdQBkP1kAwQl2OYe/Fitlife-Gym?node-id=0%3A1)\r - [ER Diagram](https://drawsql.app/teams/mohjaps/diagrams/fitgym)\r ---",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=PROD node ./src/index.js",
-    "dev": "cross-env NODE_ENV=DEV nodemon ./src/index.js",
-    "test": "DATABASE_URL=postgres://user:123456@localhost:5432/testing cross-env NODE_ENV=TEST jest"
+    "start": "cross-env NODE_ENV=production node ./src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./src/index.js",
+    "test": "DATABASE_URL=postgres://user:123456@localhost:5432/testing cross-env NODE_ENV=test jest"
   },
   "keywords": [],
   "author": "",

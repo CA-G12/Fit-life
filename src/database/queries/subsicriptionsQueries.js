@@ -32,7 +32,3 @@ class UserQueries {
 }
 
 module.exports = UserQueries
-/*
-fitlife
-
-*/

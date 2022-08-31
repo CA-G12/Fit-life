@@ -15,7 +15,10 @@ const auth = (req, res, next)=>{
   const {token} = req.cookies
   jwt.verify(token ,process.env.SECRET_KEY, (err,data)=>{
     if (!err){
-      req.user=data
+      req.user={
+        name:data.name,
+        id:data.id
+      }
     }
     next();
   })

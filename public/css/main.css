@@ -552,7 +552,9 @@ body {
 .cards {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .class-card {
@@ -562,6 +564,7 @@ body {
     overflow: hidden;
     margin: 0 8px;
     margin-bottom: 32px;
+    width: 300px;
 }
 
 .class-card .card-banner img {

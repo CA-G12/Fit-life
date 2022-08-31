@@ -3,7 +3,7 @@ const Joi = require('joi')
 const validateRegister = (user) => {
     const schema = Joi.object({
         name: Joi.string().required().min(3).max(50),
-        email: Joi.string().required().email(),
+        email: Joi.string(),
         password: Joi.string().required().min(6).max(16),
         confirm: Joi.ref('password')
     });

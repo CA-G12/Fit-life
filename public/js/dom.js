@@ -1,6 +1,11 @@
 const cards=document.getElementsByClassName('cards')[0]
 const username=document.getElementById('username')
-fetchData('GET','/username',undefined).then(res=>res.json()).then(res=>username.textContent = res.name)
+const signOutBtn=document.querySelector('.sign-outBtn')
+fetch('/username').then(res=>res.json()).then(res=>
+ {   if(res.id){
+        username.textContent = res.name
+    }}
+   ).catch(err=>console.log(err))
 getClasses()
 
 
@@ -85,8 +90,17 @@ function createCard(data){
 })}
 
 function getClasses(){
-    fetchData('GET','/classes',undefined).then(res=>res.json()).then(data=>createCard(data))
+    fetch('/classes').then(res=>res.json()).then(data=>createCard(data))
 }
 
 
+signOutBtn.addEventListener('click',()=>{
+    fetch( '/Sign-out', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+    
+      }).then(res=> res.json()).then(console.log)
+    })
 

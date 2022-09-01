@@ -7,8 +7,10 @@ const player = new PlayerQueries();
 const signUp = (req, res) => {
   const {name,email,password}=req.body
   validateRegister(req.body)
-  .then(data=>player.getUserById(data.email)
+  .then(data=>player.getUserById(email))
   .then(re=>{
+console.log(11111);
+    
     if(re.rows[0]){res.json({msg:'email is exist'})}
     else{
       bcrypt.hash(password,12).then(hashPassword=>player.storeUser(name,email,hashPassword)
@@ -16,7 +18,7 @@ const signUp = (req, res) => {
         jwtFun(id.rows[0],res)
       }))
     }
-  }))
+  })
   //   .then(/* Checking, Hashing */)
     .catch(err => res.json(err[0]));
 }

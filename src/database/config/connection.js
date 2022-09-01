@@ -1,14 +1,14 @@
 require('dotenv').config();
 const { Pool } = require('pg');
 
-const { NODE_ENV, HEROKU_POSTGRESQL_ORANGE_URL, DEV_DB_URL, TEST_DB_URL } = process.env;
+const { NODE_ENV, DATABASE_URL, DEV_DB_URL, TEST_DB_URL } = process.env;
 
 let connectionString = "";
 let ssl = false;
 console.log(NODE_ENV);
 switch (NODE_ENV) {
   case "production":
-    connectionString = HEROKU_POSTGRESQL_ORANGE_URL;
+    connectionString = DATABASE_URL;
     ssl = {
       rejectUnauthorized: false,
     };

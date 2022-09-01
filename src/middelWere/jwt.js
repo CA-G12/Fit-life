@@ -7,7 +7,8 @@ const jwtFun=(info,res)=>{
       console.log(err);
     }
     res.cookie('token',data)     
-    res.send({nn:"bbbb"})  
+    res.send({nn:"bbbb"}
+    )  
     
     })
 }

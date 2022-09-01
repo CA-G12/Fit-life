@@ -1,20 +1,19 @@
 const connection = require('../config/connection')
 
 class UserQueries {
-
-    static newSubsucribe = ({ player_id, duration, class_id }) => {
-        const query = `INSERT INTO subscriptions (class_id, player_id, duration) VALUES ($1, $1, $2);`
-        return connection.query(query, [class_id, player_id, duration])
+    static newSubsucribe = ({ player_id, duration, class_id,creation_time }) => {
+        const query = `INSERT INTO subscriptions (class_id, player_id, duration,creation_time, status) VALUES ($1, $2, $3,$4, 0);`
+        return connection.query(query, [class_id, player_id, duration, creation_time])
     }
 
     static getUserSubsicriptions = (id) => {
         const query = `
         SELECT s.id, o.name as coach, c.name as class, s.creation_time + s.duration as Date, s.status FROM subscriptions s
-join classes c 
-on c.id = s.class_id
-join coaches o
-on o.id = c.coach_id
-WHERE s.player_id = $1;
+        join classes c 
+        on c.id = s.class_id
+        join coaches o
+        on o.id = c.coach_id
+        WHERE s.player_id = $1;
         
         `
         return connection.query(query, [id]);

@@ -24,6 +24,22 @@
     <link rel="preload" as="image" href="./assets/images/heart-rate.svg">
     <link rel="preload" as="image" href="./assets/images/calories.svg">
     <style>
+      header{
+     background: hsl(210, 50%, 4%) !important;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px;
+;
+      }
+      header .btn{
+        background: hsl(12, 98%, 52%) !important;
+        color: white;
+        padding: 20px;
+      }
+        .main{
+            margin-top: 70px;
+        }
         .card{
             padding: 20px;
             background-color: var(--white);
@@ -61,7 +77,16 @@
 </head>
 
 <body>
-    <div class="container card">
+    <header class="header" data-header>
+    
+
+            <a href="/" class="logo">
+                <img src="./assets/images/logo.png" alt="logo">
+            </a>
+            <a class="btn sign-outBtn btn-secondary" href="/Sign-out"> Log out </a>
+
+    </header>
+    <div class="main card">
         <h1>User Subscriptions</h1>
         <table class="table">
             <thead>

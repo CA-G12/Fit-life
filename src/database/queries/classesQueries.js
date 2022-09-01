@@ -6,7 +6,7 @@ const connection =require('../config/connection')
       }
         showAllClasses(){
 
-            return connection.query('SELECT name, description, price, image FROM classes ');
+            return connection.query('SELECT id, name, description, price, image FROM classes ');
         }
 
         showClassById(id){

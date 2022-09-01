@@ -5,7 +5,7 @@ fetch('/username').then(res=>res.json()).then(res=>
  {   if(res.id){
         username.textContent = res.name
     }}
-   ).catch(err=>console.log(err))
+   ).catch(err=>err.json())
 getClasses()
 
 
@@ -80,7 +80,23 @@ function createCard(data){
     const addClass =  document.createElement('a')
     addClass.setAttribute('class','btn btn-secondary')
     addClass.textContent='+'
-    addClass.href='/addClass'
+    addClass.addEventListener('click',()=>{
+     const duration = prompt('duration')
+      fetch('/api/newsubscriptions',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(
+          {
+            duration : duration,
+            class_id:ele.id
+        })
+    
+      }).then(res=>res.json()).then(err=>err.json())
+ 
+    })
+    
     detailsCard.append(coachDiv,priceDiv,addClass)
 
     cardContent.append(titleWrapper,p ,detailsCard)
@@ -101,6 +117,6 @@ signOutBtn.addEventListener('click',()=>{
           'Content-Type': 'application/json',
         },
     
-      }).then(res=> res.json()).then(console.log)
+      }).then(res=> res.json()).then(err=>err.json())
     })
 

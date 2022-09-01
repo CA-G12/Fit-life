@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Life</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
+        rel="stylesheet">
+
+    <!-- preload images -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+    <link rel="preload" as="image" href="./assets/images/hero-circle-one.png">
+    <link rel="preload" as="image" href="./assets/images/hero-circle-two.png">
+    <link rel="preload" as="image" href="./assets/images/heart-rate.svg">
+    <link rel="preload" as="image" href="./assets/images/calories.svg">
+    <style>
+        .card{
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+        }
+        .table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .table td,
+        .table th {
+            border: 1px solid var(--light-gray);
+            padding: 8px;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: var(--gainsboro);
+        }
+
+        .table tr:hover {
+            background-color: #ddd;
+        }
+
+        .table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: var(--coquelicot);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container card">
+        <h1>User Subscriptions</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Course Name</th>
+                    <th>Coach Name</th>
+                    <th>End Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Stomach Training</td>
+                    <td>Ahmed Abed</td>
+                    <td>2020-01-01</td>
+                    <td>
+                        <button class="btn btn-secondary">Dis Activate</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../js/fetch.js"></script>
+    <script src="../js/subscriptions.js"></script>
+</body>
+
+</html>

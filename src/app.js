@@ -26,4 +26,11 @@ app.get('/', (req, res) => {
 app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(router);
 
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'pages', 'errors', '404.html' ))
+})
+app.use((err, req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'pages', 'errors', '500.html' ))
+})
+
 module.exports = app

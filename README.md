@@ -34,6 +34,10 @@ when I finish subscribing to classes I can log out.
 ---
 ## sql ER Diagram :
 ![ ER Diagram ](./public/assets/images/ERDigram.jpeg)
+
+## UI Figma Design :art:
+![ UI fitlife ](https://i.imgur.com/09hD2W4.png)
+
 ## Technologies ⚙:
 - HTML5
 - CSS3
